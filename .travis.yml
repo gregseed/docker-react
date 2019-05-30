@@ -6,5 +6,5 @@ before_install: # what happens before tests are run
   - docker build -t gregseed/docker-react -f Dockerfile.dev .
 
 script: # contains all commands that supposed to run with test suite, watches for non-zero status codes
-  - docker run gregseed/docker-react npm run test --coverage
+  - docker run -e CI=true gregseed/docker-react npm run test -- --coverage
   
